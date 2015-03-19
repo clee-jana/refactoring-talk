@@ -1,5 +1,7 @@
 # "Better" Code?
 
+### Critiquing Code, Not People
+
 ---
 
 ## Code has a shape
@@ -51,6 +53,8 @@
 ## Extract to a function
 
 ![Extract Function](/images/function_return.png)
+
+---
 
 ## Nothing wrong here?
 
