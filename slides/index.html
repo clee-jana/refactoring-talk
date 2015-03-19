@@ -11,20 +11,24 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-<link rel="stylesheet" href="css/reveal.min.css">
-<link rel="stylesheet" href="css/theme/default.css" id="theme">
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/black.css" id="theme">
 
-<!-- For syntax highlighting -->
+<!-- Code syntax highlighting -->
 <link rel="stylesheet" href="lib/css/zenburn.css">
 
 <link rel="stylesheet" href="css/reveal-ck.css">
 
 
-<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<!-- Printing and PDF exports -->
 <script>
-  document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
 </script>
 
 <!--[if lt IE 9]>
@@ -38,6 +42,7 @@
   <!-- Any section element inside of this container is displayed as a slide -->
   <div class="slides">
     <section>
+
 <h1>"Better" Code?</h1>
 
 </section>
@@ -100,9 +105,6 @@
 <h2>Extract to a function</h2>
 
 <p><img src="/images/function_return.png" alt="Extract Function"></p>
-
-</section>
-<section>
 
 <h2>Nothing wrong here?</h2>
 
@@ -233,6 +235,20 @@
 </section>
 <section>
 
+<h2>Removing Referrals</h2>
+
+<p><img src="/images/referral.png" alt="Remove Referrals"></p>
+
+</section>
+<section>
+
+<h2>Refactored</h2>
+
+<p><img src="/images/referrals_refactored.png" alt="Remove Referrals Refactored"></p>
+
+</section>
+<section>
+
 <p><img src="/images/getavailableoffers-refactored.png" alt="New Get Available Offers"></p>
 
 </section>
@@ -248,7 +264,7 @@
 </div>
 
 <script src="lib/js/head.min.js"></script>
-<script src="js/reveal.min.js"></script>
+<script src="js/reveal.js"></script>
 
 <script>
   (function() {
@@ -259,13 +275,14 @@
   }
   var baseOptions = {
     transition: 'default',
+
     dependencies: [
       { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
       { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
       { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-      { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-      { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+      { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true }
     ]
   };
   var configOptions = {"controls":true,"progress":true,"history":true,"center":true}

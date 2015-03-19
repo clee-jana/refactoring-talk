@@ -52,8 +52,6 @@
 
 ![Extract Function](/images/function_return.png)
 
----
-
 ## Nothing wrong here?
 
 ![valid code](/images/express.png)
@@ -159,6 +157,19 @@ red/green refactor
 * Use experiment to release code at low exposure
 
 ---
+
+## Removing Referrals
+
+![Remove Referrals](/images/referral.png)
+
+---
+
+## Refactored
+
+![Remove Referrals Refactored](/images/referrals_refactored.png)
+
+---
+
 
 ![New Get Available Offers](/images/getavailableoffers-refactored.png)
 
